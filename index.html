@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Food Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadIngredientsFromStorage()">
+    <div id='heading' class="heading">
+        <h1>Food Finder</h1>
+        <p>Find out what food you can make with the ingredients in your pantry</p>
+    </div>
+
+
+
+    <div id="ingredientsAndSearch">
+
+        <div id="ingredientsAndAddToList">
+            <input type="text" placeholder="Enter Ingredients" id="enterIngredientBar" maxlength="50" autofocus>
+            <button id="addIngredientBtn">Add to list</button>
+        </div>
+
+        <ul id="ingredientsList" class="ingredientsList"></ul>
+    
+        <div id="search">
+            <button id="searchBtn">Search</button>
+            <button id="clearBtn">Clear</button>
+            <div id="minimizeContainer">
+                <input type="checkbox" id="minimizeMissingBtn">
+                <label id="minimizeMissingLabel" for="minimizeMissingBtn">Minimize Missing Ingredients</label>
+            </div>
+        </div>
+
+        <div id="loader" class="loader" style="display: none;"></div>
+
+    </div>
+
+    <br><br><hr>
+    <div id='results' class="results">
+        <h2>Results</h2>
+    </div>
+
+    <div class="resultsTable">
+        <table id="tableOfResults">
+            <thead id="tableHead">
+                <th>Image</th>
+                <th>Recipe Name & Link</th>
+                <th>Ingredients</th>
+                <th>Missing Ingredients</th>
+            </thead>
+            <tbody id="tableBody">
+        </table>
+    </div>
+    <div id="loadMoreContainer">
+        <button id="loadMoreBtn" style="display: none;">Load More</button>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

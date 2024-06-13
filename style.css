@@ -1,0 +1,189 @@
+:root {
+    --off-white: hsl(0, 0%, 70%);
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: hsl(240, 30%, 15%);
+    color: white;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    padding-bottom: 50px;
+}
+
+#heading {
+    padding: 25px;
+    margin: 2em auto;
+    text-align: center;
+    font-size: 1.2em;
+    background-color: hsl(240, 30%, 13%);
+    position: relative;
+    top: -50px;
+}
+
+#tableOfResults {
+    border: 1px solid;
+    width: 90%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    background-color: hsl(240, 30%, 25%);
+}
+tr, th, td{
+    border: 2px solid;
+}
+td:first-child {
+    width: 312px;
+    height: 251px;
+}
+.tableImage {
+    width: 312px;
+    height: 251px;
+    object-fit: contain;
+}
+.imageInTable {
+    display: block;
+    max-width:312px;
+    max-height:251;
+    width: auto;
+    height: auto;
+}
+.tableName {
+    font-size: 25px;
+    text-align: center;
+}
+.tableIngredients, .tableMissingIngredients {
+    padding: 15px;
+    font-size: 20px;
+}
+a {
+    color: hsl(240, 41%, 58%);
+    /* text-decoration: none; */
+}
+
+#ingredientsAndSearch {
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+}
+#ingredientsAndAddToList, #search, #loadMoreBtn {
+    display: flex;
+    justify-content: center;
+}
+#enterIngredientBar {
+    width: 30%;
+    height: 2.2em;
+    border-radius: 5px;
+}
+#addIngredientBtn:hover, #searchBtn:hover, #clearBtn:hover, #loadMoreBtn:hover {
+    background-color: hsl(0, 0%, 80%);
+}
+#addIngredientBtn:active, #searchBtn:active, #clearBtn:active, #loadMoreBtn:active {
+    background-color: hsl(0, 0%, 85%);
+}
+#addIngredientBtn, #searchBtn, #clearBtn, #loadMoreBtn {
+    height: 2.4em;
+    background-color: var(--off-white);
+    border: 1px solid hsl(0, 0%, 0%);
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2px;
+}
+#searchBtn {
+    width: 20%;
+}
+#search {
+    padding-bottom: 25px;
+}
+#clearBtn {
+    width: 7%;
+}
+#minimizeContainer {
+    width: 15%;
+    height: 15%;
+    border: 1px solid black;
+    color: black;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: var(--off-white);
+}
+#minimizeMissingBtn {
+    width: 15px;
+    height: 15px;
+    border-color: black;
+    cursor: pointer;
+}
+#minimizeMissingLabel {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+#ingredientsList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow: hidden;
+    list-style: none;
+    width: 90%;
+    margin: 0 auto;
+    padding: 40px;
+}
+.ingredient {
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    background-color: hsl(240, 30%, 25%);;
+    font-size: 1.2em;
+    padding: 15px;
+    size: fit-content;
+    text-align: center;
+    border: 2px solid hsl(0, 0%, 70%);
+    border-radius: 5px;
+    margin: 5px;
+}
+#results {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.close {
+    float: left;
+    color: var(--off-white);
+}
+.close:hover {
+    cursor: pointer;
+}
+#loadMoreContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+#loadMoreBtn {
+    width: 15%;
+}
+
+
+
+
+.loader {
+    margin: 0 auto;
+    width: 25px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 6px solid #514b82;
+    animation:
+      l20-1 0.8s infinite linear alternate,
+      l20-2 1.6s infinite linear;
+  }
+  @keyframes l20-1{
+     0%    {clip-path: polygon(50% 50%,0       0,  50%   0%,  50%    0%, 50%    0%, 50%    0%, 50%    0% )}
+     12.5% {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100%   0%, 100%   0%, 100%   0% )}
+     25%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 100% 100%, 100% 100% )}
+     50%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+     62.5% {clip-path: polygon(50% 50%,100%    0, 100%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+     75%   {clip-path: polygon(50% 50%,100% 100%, 100% 100%,  100% 100%, 100% 100%, 50%  100%, 0%   100% )}
+     100%  {clip-path: polygon(50% 50%,50%  100%,  50% 100%,   50% 100%,  50% 100%, 50%  100%, 0%   100% )}
+  }
+  @keyframes l20-2{ 
+    0%    {transform:scaleY(1)  rotate(0deg)}
+    49.99%{transform:scaleY(1)  rotate(135deg)}
+    50%   {transform:scaleY(-1) rotate(0deg)}
+    100%  {transform:scaleY(-1) rotate(-135deg)}
+  }
